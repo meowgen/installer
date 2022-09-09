@@ -134,7 +134,7 @@ function check_update() {
   Install_DIR="$(cd "$(dirname "${PROJECT_DIR}")" >/dev/null 2>&1 && pwd)"
   if [[ ! -d "${Install_DIR}/jumpserver-installer-${latest_version}" ]]; then
     if [[ ! -f "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz" ]]; then
-      timeout 60s wget -qO "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz" "https://github.com/jumpserver/installer/releases/download/${latest_version}/jumpserver-installer-${latest_version}.tar.gz" || {
+      timeout 60s wget -qO "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz" "https://github.com/meowgen/installer/releases/download/${latest_version}/jumpserver-installer-${latest_version}.tar.gz" || {
         rm -f "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz"
         timeout 60s wget -qO "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz" "https://demo.jumpserver.org/download/installer/${latest_version}/jumpserver-installer-${latest_version}.tar.gz" || {
           rm -f "${Install_DIR}/jumpserver-installer-${latest_version}.tar.gz"
