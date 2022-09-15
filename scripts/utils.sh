@@ -139,18 +139,18 @@ function get_images() {
   images=(
     "jumpserver/redis:6.2"
     "${mysql_images}"
-    "jumpserver/web:dev"
-    "jumpserver/core:dev" # здесь
-    "jumpserver/koko:dev"
-    "jumpserver/lion:dev"
-    "jumpserver/magnus:dev"
+    "jumpserver/web:${VERSION}"
+    "meowgen/core:v0" # здесь
+    "jumpserver/koko:${VERSION}"
+    "jumpserver/lion:${VERSION}"
+    "jumpserver/magnus:${VERSION}"
   )
   for image in "${images[@]}"; do
     echo "${image}"
   done
   if [[ "${scope}" == "all" ]]; then
-    echo "registry.fit2cloud.com/jumpserver/omnidb:dev"
-    echo "registry.fit2cloud.com/jumpserver/razor:dev"
+    echo "registry.fit2cloud.com/jumpserver/omnidb:${VERSION}"
+    echo "registry.fit2cloud.com/jumpserver/razor:${VERSION}"
   fi
 }
 
