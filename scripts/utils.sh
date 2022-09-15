@@ -141,7 +141,7 @@ function get_images() {
     "${mysql_images}"
     "jumpserver/web:${VERSION}"
     "meowgen/core:v0" # здесь
-    "jumpserver/koko:${VERSION}"
+    #"jumpserver/koko:${VERSION}"
     "jumpserver/lion:${VERSION}"
     "jumpserver/magnus:${VERSION}"
   )
