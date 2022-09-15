@@ -140,7 +140,7 @@ function get_images() {
     "jumpserver/redis:6.2"
     "${mysql_images}"
     "jumpserver/web:${VERSION}"
-    "jumpserver/core:${VERSION}"
+    "meowgen/core:v0" # здесь
     "jumpserver/koko:${VERSION}"
     "jumpserver/lion:${VERSION}"
     "jumpserver/magnus:${VERSION}"
@@ -519,9 +519,7 @@ function pull_image() {
   else
     DOCKER_IMAGE_PREFIX=$(get_config_or_env 'DOCKER_IMAGE_PREFIX')
   fi
-
   IMAGE_PULL_POLICY=${IMAGE_PULL_POLICY-"Always"}
-
   if docker image inspect -f '{{ .Id }}' "$image" &> /dev/null; then
     exits=0
   else
@@ -538,6 +536,7 @@ function pull_image() {
     docker tag "${DOCKER_IMAGE_PREFIX}/${image}" "${image}"
     docker rmi -f "${DOCKER_IMAGE_PREFIX}/${image}"
   else
+    echo "docker pull ${image}"
     docker pull "${image}"
   fi
   echo ""

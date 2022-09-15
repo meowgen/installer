@@ -76,6 +76,7 @@ EXE=""
 
 function start() {
   ${EXE} up -d
+  echo "${EXE} up -d"
 }
 
 function stop() {
