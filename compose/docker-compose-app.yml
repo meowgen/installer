@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   core:
-    image: meowgen/core:v0 # здесь
+    image: jumpserver/core:dev # здесь
     container_name: jms_core
     ulimits:
       core: 0
