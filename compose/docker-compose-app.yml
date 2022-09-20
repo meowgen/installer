@@ -52,7 +52,7 @@ services:
       - net
 
   lion:
-    image: jumpserver/lion:dev
+    image: jumpserver/lion:v2.24.0
     container_name: jms_lion
     ulimits:
       core: 0

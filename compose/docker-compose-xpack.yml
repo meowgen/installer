@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   omnidb:
-    image: registry.fit2cloud.com/jumpserver/omnidb:dev
+    image: meowgen/omnidb:v2.24.0
     container_name: jms_omnidb
     ulimits:
       core: 0
@@ -25,7 +25,7 @@ services:
       - net
 
   razor:
-    image: registry.fit2cloud.com/jumpserver/razor:dev
+    image: meowgen/razor:v2.24.0
     container_name: jms_razor
     ulimits:
       core: 0

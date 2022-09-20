@@ -142,16 +142,18 @@ function get_images() {
     "jumpserver/web:${VERSION}"
     "meowgen/core:v0" # здесь
     "jumpserver/koko:${VERSION}"
-    "jumpserver/lion:${VERSION}"
+    "jumpserver/lion:v2.24.0"
     "jumpserver/magnus:${VERSION}"
+    "meowgen/omnidb:v2.24.0"
+    "meowgen/razor:v2.24.0"
   )
   for image in "${images[@]}"; do
     echo "${image}"
   done
-  if [[ "${scope}" == "all" ]]; then
-    echo "registry.fit2cloud.com/jumpserver/omnidb:${VERSION}"
-    echo "registry.fit2cloud.com/jumpserver/razor:${VERSION}"
-  fi
+  # if [[ "${scope}" == "all" ]]; then
+  #   echo "registry.fit2cloud.com/jumpserver/omnidb:v2.24.0"
+  #   echo "registry.fit2cloud.com/jumpserver/razor:v2.24.0"
+  # fi
 }
 
 function read_from_input() {
@@ -429,11 +431,12 @@ function get_latest_version() {
 }
 
 function image_has_prefix() {
-  if [[ $1 =~ registry.* ]]; then
-    echo "1"
-  else
-    echo "0"
-  fi
+  # if [[ $1 =~ registry.* ]]; then
+  #   echo "1"
+  # else
+  #   echo "0"
+  # fi
+  echo "0"
 }
 
 function get_db_migrate_compose_cmd() {
